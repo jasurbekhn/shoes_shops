@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<div class="container p-5 text-light">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">
+            {% if 'update' in request.path %}
+            O`zgartirish va saqlash
+            {% else %}
+            Qo`shish va saqlash
+            {% endif %}
+        </button>
+    </form>
+</div>
+{% endblock main %}

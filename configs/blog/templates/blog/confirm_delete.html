@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<div class="container d-flex justify-content-center">
+    <div class="col-6 m-4 card p-4 bg-dark">
+        <form method="post" action="">
+            {% csrf_token %}
+            <h5 class="text-center text-light">Ochirishni tasdiqlash "{{ article.title }}"</h5>
+            <br>
+            <div class="d-flex justify-content-evenly">
+                <input class="btn btn-danger btn-lg" type="submit" value="Ha">
+                <a href="{% url 'article' article.id %}" class="btn btn-success btn-lg">Yo`q</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock main %}

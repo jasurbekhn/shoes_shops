@@ -1,0 +1,11 @@
+{% load blog_tags %}
+
+<div class="list-group border border-dark " style="margin-top: 150px;" >
+    <a href="{% url 'index' %}" class="bg-dark text-light border border-danger list-group-item list-group-item-action" aria-current="true">
+        Filter
+    </a>
+    {% get_sorters as sorters %}
+    {% for key, value in sorters.items %}
+    <a href="?sort={{ key }}" class="bg-dark text-light border border-danger list-group-item list-group-item-action">{{ value }}</a>
+    {% endfor %}
+</div>
